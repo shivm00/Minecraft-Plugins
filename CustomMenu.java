@@ -27,6 +27,7 @@ public class CustomMenu implements Listener{
 		envelopeMeta.setLore(sLore);
 		inventory.setItem(1,envelope);
 		
+		player.openInventory(inventory); //opens the inventory
 	}
 	
 	@EventHandler
