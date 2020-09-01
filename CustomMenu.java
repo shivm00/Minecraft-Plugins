@@ -17,7 +17,7 @@ import net.md_5.bungee.api.ChatColor;
 public class CustomMenu implements Listener{
 
 	public static void openGUI (Player player){
-		Inventory inventory= Bukkit.createInventory(null, 1, "Command");
+		Inventory inventory= Bukkit.createInventory(null, 1, "Command Center");
 		ItemStack envelope = new ItemStack(Material.WHITE_WOOL);
 		ItemMeta envelopeMeta = envelope.getItemMeta();
 		envelope.setItemMeta(envelopeMeta);
@@ -25,13 +25,12 @@ public class CustomMenu implements Listener{
 		String lore = "Click here to open envelope";
 		sLore.add(lore);
 		envelopeMeta.setLore(sLore);
-		
 		inventory.setItem(1,envelope);
 		
 	}
 	
 	@EventHandler
-	public void inventoryClick(InventoryClickEvent event){
+	public void openEnvelope(InventoryClickEvent event){
 		Inventory envelopeContents = Bukkit.createInventory(null, 20, ChatColor.RED + "Envelope");
 		
 		if(event.getWhoClicked() instanceof Player){
