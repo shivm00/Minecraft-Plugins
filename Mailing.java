@@ -1,15 +1,23 @@
 package Test_Plugin;
 
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
+import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class Mailing extends  JavaPlugin {
 
+
+public class Mailing extends JavaPlugin   {
+	
 	@Override
-	public void onEnable(){
-		
+	public void onEnable(){ //startup commands
+		Bukkit.broadcastMessage(ChatColor.LIGHT_PURPLE + "Testing has started");
+		Envelope.init();	
+		getCommand("giveEnvelope").setExecutor(new Commands());
 	}
 	
-	public void onDisable(){
+	@Override
+	public void onDisable(){ //
 		
 	}
 	
@@ -19,6 +27,7 @@ public class Mailing extends  JavaPlugin {
 	}
 	
 	public boolean putItemsIntoEnvelope(){
+		
 		return false; //placeholder
 	}
 	
