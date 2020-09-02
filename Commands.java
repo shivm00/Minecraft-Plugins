@@ -1,4 +1,4 @@
-package Test_Plugin;
+package me.NerdySteamGamer.Mailing;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;

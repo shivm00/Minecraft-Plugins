@@ -1,4 +1,4 @@
-package Test_Plugin;
+package me.NerdySteamGamer.Mailing;
 
 import java.util.ArrayList;
 
@@ -9,6 +9,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemFlag;
@@ -20,6 +21,7 @@ import net.md_5.bungee.api.ChatColor;
 public class Envelope implements Listener{
 	
 	public static ItemStack envelope;
+	public static Inventory contents;
 	
 	
 	public static void init(){ //initializes the envelope
@@ -28,7 +30,7 @@ public class Envelope implements Listener{
 	}
 	
 	public static void createEnvelope(){
-		ItemStack envelope = new ItemStack(Material.WHITE_BANNER);
+		ItemStack envelope = new ItemStack(Material.WOODEN_SWORD);
 		ItemMeta meta = envelope.getItemMeta();
 		meta.setDisplayName("Click to open envelope");
 		ArrayList lore = new ArrayList<>();
@@ -41,7 +43,7 @@ public class Envelope implements Listener{
 	}
 	
 	public static Inventory createInventory(){ //creates the envelope inventory
-		Inventory inv = Bukkit.createInventory(null, 15, ChatColor.RED + "Envelope");
+		Inventory inv = Bukkit.getServer().createInventory(null, InventoryType.CHEST, ChatColor.RED + "Envelope");
 		return inv;
 		
 	}

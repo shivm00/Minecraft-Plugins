@@ -1,4 +1,4 @@
-package Test_Plugin;
+package me.NerdySteamGamer.Mailing;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -6,14 +6,14 @@ import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
 
-
 public class Mailing extends JavaPlugin   {
 	
 	@Override
 	public void onEnable(){ //startup commands
 		Bukkit.broadcastMessage(ChatColor.LIGHT_PURPLE + "Testing has started");
-		Envelope.init();	
+		Bukkit.getServer().getPluginManager().registerEvents(new Events(), this);	
 		getCommand("giveEnvelope").setExecutor(new Commands());
+		
 	}
 	
 	@Override
